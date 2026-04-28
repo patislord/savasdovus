@@ -1,0 +1,6 @@
+customnetworkmanager'a ekliyiceğin karaterin prefibini atman lazım
+Registered Spawnable Prefabs kısmına + diyip eklicen onlarda onun idsi olcak
+
+
+ardından ui a buton ekleyip onclickine canvası atıcaksın script çalıssın diye 
+menu kontrol.buttonaBasıldı  seçicen son kısmada parametre olarak id giriceksin
