@@ -1,6 +1,80 @@
 {
-    "version": 0,
+    "version": 1,
     "name": "PlayerControls",
-    "maps": [],
-    "controlSchemes": []
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "fb084eee-a912-4270-9ae8-7c24486cbbe8",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "a5f3cf41-a1dc-406f-8c2b-08ad6cf36522",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6a7b864a-bc67-47e6-9896-e4113491a072",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "id": "9c8ad852-a42d-45b9-b37f-74d76b68acf0",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "a67319eb-263c-44f1-a4ab-80611ebf96b9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "54c56607-1554-4952-8cf9-23fcd93b2103",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "hayalimigercekmi",
+            "bindingGroup": "hayalimigercekmi",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
