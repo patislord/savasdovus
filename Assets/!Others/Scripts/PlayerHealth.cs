@@ -26,6 +26,14 @@ public class PlayerHealth : NetworkBehaviour
         }
     }
 
+    [Server]
+    public void Kill()
+    {
+        if (isDead) return;
+
+        Die();
+    }
+
 
     [Command]
     public void CMDTakeDamage(float damage)
