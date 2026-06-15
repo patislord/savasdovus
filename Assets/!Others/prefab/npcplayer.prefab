@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.07, y: 1.7}
+  m_AnchoredPosition: {x: 0.17, y: 1.48}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6079431477743005629
@@ -213,6 +213,8 @@ GameObject:
   - component: {fileID: 1230975447055773632}
   - component: {fileID: -6365411903205990229}
   - component: {fileID: -5713480965168042735}
+  - component: {fileID: 4736570344620534637}
+  - component: {fileID: 8666965320221625927}
   m_Layer: 0
   m_Name: npcplayer
   m_TagString: Untagged
@@ -287,7 +289,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4045702989537347919, guid: 93ef1f9547d025f42aa4a792e7be5b85, type: 3}
+  m_Sprite: {fileID: 6285188792294485560, guid: 50365e6a761b5ca49ac62052553a72e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -348,8 +350,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.008770704, y: 0}
-  m_Size: {x: 2.6165428, y: 3.11}
+  m_Offset: {x: 0.012088537, y: -0.0663538}
+  m_Size: {x: 2.4241166, y: 2.9374804}
   m_Direction: 0
 --- !u!50 &8739226562422618960
 Rigidbody2D:
@@ -443,6 +445,8 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  animator: {fileID: 4736570344620534637}
+  networkAnimator: {fileID: 8666965320221625927}
   playerCamera: {fileID: 693701291318160483}
 --- !u!114 &-6365411903205990229
 MonoBehaviour:
@@ -482,6 +486,45 @@ MonoBehaviour:
   syncInterval: 0
   hp: 100
   healthBar: {fileID: 719994301637999539}
+--- !u!95 &4736570344620534637
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882238376456274027}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6a68accd5e24dc479ecffce0b59d1f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8666965320221625927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882238376456274027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Mirror.Components::Mirror.NetworkAnimator
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  clientAuthority: 1
+  animator: {fileID: 4736570344620534637}
 --- !u!1 &7791984218423272828
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +591,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.2858199, y: -0.4699396}
+  m_Offset: {x: 0.14647698, y: -0.27751362}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -558,7 +601,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.7705033, y: 1.2094004}
+  m_Size: {x: 1.4918175, y: 0.8245485}
   m_EdgeRadius: 0
 --- !u!1 &8989028290867036580
 GameObject:
@@ -594,7 +637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000077486, y: 0.14999992}
+  m_AnchoredPosition: {x: 0.000000059604, y: 0.1}
   m_SizeDelta: {x: 2, y: 0.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8106181027432743736

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : NetworkBehaviour
 {
+        public Animator animator;
+        
+    public NetworkAnimator networkAnimator;
     //public CharacterController characterController;
     public Camera playerCamera;
 

@@ -17,6 +17,7 @@ public class bordermurderer : MonoBehaviour
         if (playerHealth.isLocalPlayer)
         {
             playerHealth.TakeDamage(float.MaxValue);
+            Debug.Log("Oyuncu Düştü haha");
         }
     }
 }
