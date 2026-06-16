@@ -1,14 +1,16 @@
-using Mirror;
+ using Mirror;
 using UnityEngine;
 
 public class Movement1 : NetworkBehaviour
 {
     public float speed = 5f;
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -16,6 +18,12 @@ public class Movement1 : NetworkBehaviour
         if (!isLocalPlayer) return;
 
         float h = Input.GetAxis("Horizontal");
+
+        // Sprite'ı hareket yönüne göre çevir
+        if (h < 0)
+            spriteRenderer.flipX = true;  // Sola bak
+        else if (h > 0)
+            spriteRenderer.flipX = false; // Sağa bak
 
         if (rb != null)
         {
