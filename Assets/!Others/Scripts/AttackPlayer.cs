@@ -9,13 +9,14 @@ public class AttackPlayer : NetworkBehaviour
     public NetworkAnimator networkAnimator;
     public KeyCode attackKey = KeyCode.E;
     public float attackDamage = 20f;
-    public float attackDuration = 0.35f;
-    public float attackCooldown = 0.6f;
+    public float attackDuration = 2.09f;
+    public float attackCooldown = 2.09f;
+    public float hitInterval = 0.7f;
 
     private bool isAttacking;
     private float nextAttackTime;
     private double nextServerAttackTime;
-    private readonly HashSet<uint> damagedTargets = new HashSet<uint>();
+    private readonly Dictionary<uint, double> lastHitTimes = new Dictionary<uint, double>();
 
     private void Start()
     {
@@ -64,7 +65,7 @@ public class AttackPlayer : NetworkBehaviour
     private IEnumerator AttackRoutine()
     {
         isAttacking = true;
-        damagedTargets.Clear();
+        lastHitTimes.Clear();
 
         yield return new WaitForSeconds(attackDuration);
 
@@ -84,10 +85,13 @@ public class AttackPlayer : NetworkBehaviour
 
         uint targetNetId = targetHealth.netIdentity.netId;
 
-        if (damagedTargets.Contains(targetNetId))
+        if (lastHitTimes.TryGetValue(targetNetId, out double lastHitTime) &&
+            NetworkTime.time < lastHitTime + hitInterval)
+        {
             return;
+        }
 
-        damagedTargets.Add(targetNetId);
+        lastHitTimes[targetNetId] = NetworkTime.time;
         targetHealth.ServerTakeDamage(attackDamage);
     }
 

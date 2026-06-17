@@ -545,9 +545,10 @@ MonoBehaviour:
   animator: {fileID: 4736570344620534637}
   networkAnimator: {fileID: 8666965320221625927}
   attackKey: 101
-  attackDamage: 20
-  attackDuration: 2.09
-  attackCooldown: 3
+  attackDamage: 10
+  attackDuration: 2.08
+  attackCooldown: 4
+  hitInterval: 0.5
 --- !u!1 &7791984218423272828
 GameObject:
   m_ObjectHideFlags: 0
