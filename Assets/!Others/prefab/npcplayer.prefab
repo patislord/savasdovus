@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: -5713480965168042735}
   - component: {fileID: 4736570344620534637}
   - component: {fileID: 8666965320221625927}
+  - component: {fileID: 2541682246811746089}
   m_Layer: 0
   m_Name: npcplayer
   m_TagString: Untagged
@@ -430,6 +431,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   speed: 5
+  animator: {fileID: 4736570344620534637}
 --- !u!114 &1230975447055773632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,8 +447,6 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  animator: {fileID: 4736570344620534637}
-  networkAnimator: {fileID: 8666965320221625927}
   playerCamera: {fileID: 693701291318160483}
 --- !u!114 &-6365411903205990229
 MonoBehaviour:
@@ -486,6 +486,8 @@ MonoBehaviour:
   syncInterval: 0
   hp: 100
   healthBar: {fileID: 719994301637999539}
+  animator: {fileID: 4736570344620534637}
+  networkAnimator: {fileID: 8666965320221625927}
 --- !u!95 &4736570344620534637
 Animator:
   serializedVersion: 7
@@ -525,6 +527,27 @@ MonoBehaviour:
   syncInterval: 0
   clientAuthority: 1
   animator: {fileID: 4736570344620534637}
+--- !u!114 &2541682246811746089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882238376456274027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d792c3fb8c0ad4fbcbdbd89280bbb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackPlayer
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  animator: {fileID: 4736570344620534637}
+  networkAnimator: {fileID: 8666965320221625927}
+  attackKey: 101
+  attackDamage: 20
+  attackDuration: 2.09
+  attackCooldown: 3
 --- !u!1 &7791984218423272828
 GameObject:
   m_ObjectHideFlags: 0

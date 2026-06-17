@@ -6,6 +6,9 @@ public class PlayerHealth : NetworkBehaviour
 {
     [SyncVar(hook = nameof(OnHpchange))]public float hp = 100;
     public UnityEngine.UI.Image healthBar;
+            public Animator animator;
+        
+    public NetworkAnimator networkAnimator;
     private bool isDead;
 
     private void Update()
@@ -22,6 +25,8 @@ public class PlayerHealth : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
+            //hit 
+            animator.SetTrigger("hit");
             CMDTakeDamage(damage);
         }
     }
@@ -38,14 +43,28 @@ public class PlayerHealth : NetworkBehaviour
     [Command]
     public void CMDTakeDamage(float damage)
     {
+        ServerTakeDamage(damage);
+    }
+
+    [Server]
+    public void ServerTakeDamage(float damage)
+    {
         if(isDead || damage < 0) return;
 
         hp -= damage;
+        RpcPlayHitAnimation();
 
         if (hp <= 0)
         {
             Die();
         }
+    }
+
+    [ClientRpc]
+    private void RpcPlayHitAnimation()
+    {
+        if (animator != null)
+            animator.SetTrigger("hit");
     }
 
     [Server]
