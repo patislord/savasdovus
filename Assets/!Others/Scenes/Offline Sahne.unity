@@ -170,6 +170,7 @@ MonoBehaviour:
   spawnPrefabs:
   - {fileID: 6882238376456274027, guid: 1871d9379653f8144a0c364919d55b8c, type: 3}
   - {fileID: 6882238376456274027, guid: 04b9926fb251f62419f700fbe0ae07f6, type: 3}
+  - {fileID: 6882238376456274027, guid: c694fc317f29dab448b524388e671495, type: 3}
   exceptionsDisconnect: 0
   snapshotSettings:
     bufferTimeMultiplier: 2
@@ -183,7 +184,7 @@ MonoBehaviour:
     dynamicAdjustmentTolerance: 1
     deliveryTimeEmaDuration: 2
   evaluationMethod: 0
-  evaluationInterval: 3
+  evaluationInterval: 4
   timeInterpolationGui: 0
 --- !u!4 &41245959
 Transform:

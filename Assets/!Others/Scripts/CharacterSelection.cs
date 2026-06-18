@@ -70,18 +70,42 @@ public class CharacterSelection : NetworkBehaviour
             cameraObject.AddComponent<AudioListener>();
     }
 
+//önemli not karakter eklendiğinde cmdspawnı network yerindeki id ile aynı olması gerekiyor yoksa crash verir
+//beans i unutma fake playerin içindeki!!!
+//
     public void SpawnNerd()
     {
+        //guch
         characterSelectorPanel.SetActive(false);
         CmdSpawn(0);
     }
 
     public void SpawnCoolbean()
     {
+        //ghost
         characterSelectorPanel.SetActive(false);
         CmdSpawn(1);
     }
-
+        public void SpawnCody()
+    {
+        //cody
+        characterSelectorPanel.SetActive(false);
+        CmdSpawn(2);
+    }
+//
+//
+//
+//
+////
+/// //
+/// //
+/// //
+/// //
+/// //
+/// //
+/// //
+/// //
+/// 
     [Command(requiresAuthority = false)]
     private void CmdSpawn(int spawnIndex, NetworkConnectionToClient sender = null)
     {
