@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: -5713480965168042735}
   - component: {fileID: 4736570344620534637}
   - component: {fileID: 8666965320221625927}
-  - component: {fileID: 792929165561832144}
+  - component: {fileID: -7965889682348934720}
   m_Layer: 0
   m_Name: coddisiom
   m_TagString: Untagged
@@ -559,7 +559,7 @@ MonoBehaviour:
   syncInterval: 0
   clientAuthority: 1
   animator: {fileID: 4736570344620534637}
---- !u!114 &792929165561832144
+--- !u!114 &-7965889682348934720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -568,18 +568,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6882238376456274027}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ef80a815ec21aa438e85afb8ca17200, type: 3}
+  m_Script: {fileID: 11500000, guid: bd15e7fd88b4d9d4f949da17bb9749c8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::firescript
+  m_EditorClassIdentifier: Assembly-CSharp::FireScript.firescript
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
   animator: {fileID: 4736570344620534637}
   firepoint: {fileID: 3760318122718538622}
-  bulletPrefab: {fileID: 5586081843245464157, guid: 8a9223f16b83f754f94e193bbe924044, type: 3}
-  fireKey: 101
-  fireCooldown: 0.41
-  networkAnimator: {fileID: 8666965320221625927}
+  bulletPrefab: {fileID: 0}
+  fireKey: 114
+  fireCooldown: 0.2
 --- !u!1 &7791984218423272828
 GameObject:
   m_ObjectHideFlags: 0

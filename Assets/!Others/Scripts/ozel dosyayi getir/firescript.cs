@@ -1,19 +1,24 @@
 using Mirror;
 using UnityEngine;
 
-public class firescript : NetworkBehaviour
+namespace FireScript
 {
-        public Animator animator;
-
-    private Rigidbody2D rb;
+    public class firescript : NetworkBehaviour
+{
+    public Animator animator;
     public Transform firepoint;
     public GameObject bulletPrefab;
-    public KeyCode fireKey = KeyCode.E;
+    public KeyCode fireKey = KeyCode.R;
     public float fireCooldown = 0.2f;
-        public NetworkAnimator networkAnimator;
 
     private float nextFireTime;
     private double nextServerFireTime;
+
+    private void Start()
+    {
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>();
+    }
 
     private void Update()
     {
@@ -22,7 +27,14 @@ public class firescript : NetworkBehaviour
         if (Time.time < nextFireTime) return;
 
         nextFireTime = Time.time + fireCooldown;
+        PlayAttackAnimation();
         CmdShoot();
+    }
+
+    private void PlayAttackAnimation()
+    {
+        if (animator != null)
+            animator.SetTrigger("attack");
     }
 
     [Command]
@@ -35,10 +47,19 @@ public class firescript : NetworkBehaviour
             return;
 
         nextServerFireTime = NetworkTime.time + fireCooldown;
-        
 
         GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
         NetworkServer.Spawn(bullet);
-        animator.SetTrigger("attack");
+        RpcPlayAttackAnimation();
     }
+
+    [ClientRpc]
+    private void RpcPlayAttackAnimation()
+    {
+        if (isLocalPlayer)
+            return;
+
+        PlayAttackAnimation();
+    }
+}
 }
